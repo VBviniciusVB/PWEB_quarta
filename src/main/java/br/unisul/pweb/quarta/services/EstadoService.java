@@ -1,0 +1,47 @@
+package br.unisul.pweb.quarta.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.unisul.pweb.quarta.domain.Estado;
+import br.unisul.pweb.quarta.repository.EstadoRepository;
+
+@Service
+public class EstadoService {
+	
+	@Autowired // ela vai injetar comando quando for necessário
+	private EstadoRepository rep;
+	
+	//BUSCAR POR ID
+	public Estado find (Integer id) {
+		Optional<Estado> obj = rep.findById(id); // c = rep... n foi feito isso para n ter erro
+		return obj.orElse(null);
+	}
+	
+	//INSERIR
+	public Estado insert (Estado obj) {
+		obj.setId(null);
+		return rep.save(obj);
+	}
+
+	//ATUALIZAR
+	public Estado update (Estado obj) {
+		find(obj.getId());
+		return rep.save(obj);
+	}
+
+	//DELETAR
+	public void delete (Integer id) {
+		find(id); // só recebe um inteiro para apagar
+		rep.deleteById(id);
+	}
+	
+	//LISTAR TODAS
+	public List<Estado> findAll(){
+		return rep.findAll();
+	}
+	
+}
