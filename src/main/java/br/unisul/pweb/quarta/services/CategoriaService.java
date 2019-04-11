@@ -7,17 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.unisul.pweb.quarta.domain.Categoria;
-import br.unisul.pweb.quarta.repository.CategoriaRepository;
+import br.unisul.pweb.quarta.repositories.CategoriaRepository;
 
 @Service
 public class CategoriaService {
 	
-	@Autowired // ela vai injetar comando quando for necessário
+	@Autowired
 	private CategoriaRepository rep;
 	
 	//BUSCAR POR ID
 	public Categoria find (Integer id) {
-		Optional<Categoria> obj = rep.findById(id); // c = rep... n foi feito isso para n ter erro
+		Optional<Categoria> obj = rep.findById(id);
 		return obj.orElse(null);
 	}
 	
@@ -35,7 +35,7 @@ public class CategoriaService {
 
 	//DELETAR
 	public void delete (Integer id) {
-		find(id); // só recebe um inteiro para apagar
+		find(id);
 		rep.deleteById(id);
 	}
 	
@@ -43,5 +43,5 @@ public class CategoriaService {
 	public List<Categoria> findAll(){
 		return rep.findAll();
 	}
-	
+
 }

@@ -25,7 +25,7 @@ public class CategoriaResource {
 	private CategoriaService service;
 	
 	//BUSCAR POR ID
-	@RequestMapping(value="/{id}",method=RequestMethod.GET) 
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Categoria> find(@PathVariable Integer id){
 		Categoria obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
@@ -34,7 +34,7 @@ public class CategoriaResource {
 	//INSERIR
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Void>insert(@RequestBody Categoria obj){
-		obj = service.insert(obj); 
+		obj = service.insert(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().
 				path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -61,7 +61,7 @@ public class CategoriaResource {
 	public ResponseEntity<List<CategoriaDTO>> findAll() {
 		List<Categoria> lista = service.findAll();
 		//ou for para percorrer a lista
-		//List<CategoriaDTO> listaDTO = lista.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList());
+		//List<CategoriaDTO> listaDTO = lista.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList()); 
 		List<CategoriaDTO> listaDTO = new ArrayList<CategoriaDTO>();
 		for (Categoria c : lista) {
 			listaDTO.add(new CategoriaDTO(c));

@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 import br.unisul.pweb.quarta.domain.Categoria;
 
-public class CategoriaDTO implements Serializable {
-	
+public class CategoriaDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
+	
 	private Integer id;
 	private String nome;
 	
@@ -27,7 +27,6 @@ public class CategoriaDTO implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -51,5 +50,9 @@ public class CategoriaDTO implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
+	
+	
 
 }

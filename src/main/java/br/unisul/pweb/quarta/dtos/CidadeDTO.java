@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import br.unisul.pweb.quarta.domain.Cidade;
 
+
 public class CidadeDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 

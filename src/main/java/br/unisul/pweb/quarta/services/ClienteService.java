@@ -13,8 +13,8 @@ import br.unisul.pweb.quarta.domain.Endereco;
 import br.unisul.pweb.quarta.domain.enums.TipoCliente;
 import br.unisul.pweb.quarta.dtos.ClienteDTO;
 import br.unisul.pweb.quarta.dtos.ClienteNewDTO;
-import br.unisul.pweb.quarta.repository.ClienteRepository;
-import br.unisul.pweb.quarta.repository.EnderecoRepository;
+import br.unisul.pweb.quarta.repositories.ClienteRepository;
+import br.unisul.pweb.quarta.repositories.EnderecoRepository;
 
 @Service
 public class ClienteService {
@@ -74,6 +74,11 @@ public class ClienteService {
 		obj.setId(null);
 		obj = repo.save(obj);
 		enderecoRepository.saveAll(obj.getEnderecos());
+		return obj;
+	}
+	
+	public Cliente findByEmail(String email) {
+		Cliente obj = repo.findByEmail(email);
 		return obj;
 	}
 

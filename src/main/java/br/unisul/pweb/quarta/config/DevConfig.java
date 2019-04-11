@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 import br.unisul.pweb.quarta.services.DbService;
 
+
 @Configuration
 public class DevConfig {
 	

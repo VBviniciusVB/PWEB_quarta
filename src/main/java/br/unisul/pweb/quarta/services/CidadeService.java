@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.unisul.pweb.quarta.domain.Cidade;
-import br.unisul.pweb.quarta.repository.CidadeRepository;
+import br.unisul.pweb.quarta.repositories.CidadeRepository;
 
 @Service
 public class CidadeService {

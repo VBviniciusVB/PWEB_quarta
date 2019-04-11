@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import br.unisul.pweb.quarta.domain.Categoria;
 import br.unisul.pweb.quarta.domain.Produto;
-import br.unisul.pweb.quarta.repository.CategoriaRepository;
-import br.unisul.pweb.quarta.repository.ProdutoRepository;
+import br.unisul.pweb.quarta.repositories.CategoriaRepository;
+import br.unisul.pweb.quarta.repositories.ProdutoRepository;
 
 @Service
 public class ProdutoService {
